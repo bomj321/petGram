@@ -3,7 +3,7 @@
     "name": "petgram",
     "builds": [
         {
-            "user": "@now/static-build",
+            "use": "@now/static-build",
             "src": "package.json"
         }
     ],
