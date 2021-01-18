@@ -1,4 +1,20 @@
+// Dependencies
 import React from "react";
-import ReactDom from "react-dom";
+import ReactDOM from "react-dom";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
+
+// Components
 import { App } from "./App";
-ReactDom.render(<App />, document.getElementById("app"));
+
+const client = new ApolloClient({
+  uri: "https://petgram-server-jrmfsd-okxluew9o.now.sh/graphql",
+});
+
+ReactDOM.render(
+  // eslint-disable-next-line react/jsx-filename-extension
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById("app")
+);
